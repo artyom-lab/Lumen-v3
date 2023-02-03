@@ -1,0 +1,1659 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap')
+$transition: .3s
+$box: 0 1px 1px rgba(0, 0, 0, .1)
+
+.red
+	color: #fc5c5c
+.green 
+	color: #3ad654
+.blue 
+	color: #05a7ff
+.orange
+	color: #e88903
+.gray
+	color: #b9b9b9
+.gray2
+	color: #6c7884
+.bg-gray
+	background: #f1f1f6
+	border-radius: 0 0 8px 8px
+	.dark-mode &
+		background: #1c222a
+
+body
+	font-family: 'Roboto', sans-serif
+	font-size: 12px
+	min-height: 100vh
+	transition: $transition
+	padding-top: 62px
+	position: relative
+	color: #222222
+	background-color: #EFEFF4
+	@media (min-width: 1950px)
+		font-size: 15px
+	&.dark-mode 
+		color: #FFF
+		background-color: #1a1d21
+	@media (min-width: 992px)
+		padding-left: 220px
+	@media (min-width: 1400px)
+		padding-right: 300px
+	@media (min-width: 1950px)
+		padding-left: 330px
+		padding-right: 0
+	&.menubar-1
+		@media (min-width: 992px)
+			padding-left: 0
+			.sidebar-1
+				margin-left: -220px
+				@media (min-width: 1950px)
+					margin-left: -330px
+		@media (max-width: 991.98px)
+			overflow: hidden
+			.sidebar-1, .navbar, .content, .sidebar-2
+				transform: translateX(220px)
+	&.menubar-2
+		@media (max-width: 1399.98px)
+			overflow: hidden
+			.sidebar-1, .navbar, .content, .sidebar-2
+				transform: translateX(-300px)
+				@media (max-width: 349.98px)
+					transform: translateX(-270px)
+	&.body-2
+		@media (min-width: 1200px)
+			padding-right: 0
+
+* 
+	outline: none !important
+
+a
+	transition: $transition
+	&:hover
+		text-decoration: none
+		opacity: .6
+
+img
+	max-width: 100%
+	height: auto
+
+.o-hidden
+	@media (max-width: 991.98px)
+		overflow: hidden
+
+.dropdown-menu, .daterangepicker
+	box-shadow: 0 1px 20px rgba(0, 0, 0, .1)
+
+.sidebar-1, .navbar, .content, .sidebar-2
+	transition: $transition
+
+.w-1
+	width: 1px
+
+.w-190
+	@media (min-width: 992px)
+		flex-basis: 180px
+		width: 180px
+	@media (min-width: 1400px)
+		flex-basis: 200px
+		width: 200px
+	@media (min-width: 1950px)
+		flex-basis: 250px
+		width: 250px
+
+.w-380
+	@media (min-width: 1200px)
+		flex-basis: 360px
+		width: 360px
+	@media (min-width: 1400px)
+		flex-basis: 400px
+		width: 400px
+	@media (min-width: 1950px)
+		flex-basis: 500px
+		width: 500px
+
+.fwm
+	font-weight: 500
+
+.z-index-2
+	z-index: 2
+
+.p-15
+	padding: 15px 15px 0
+
+.pt-37
+	padding-top: 37px !important
+
+.br-100
+	border-radius: 100px
+
+.br 
+	border-right: 1px solid #dedede
+	.dark-mode &
+		border-right: 1px solid #313943
+
+.bb 
+	border-bottom: 1px solid #dedede
+	.dark-mode &
+		border-bottom: 1px solid #313943
+
+.bb2
+	border-bottom: 2px solid #dedede
+	.dark-mode &
+		border-bottom: 2px solid #313943
+
+.bb3
+	@media (max-width: 575.98px)
+		border-bottom: 1px solid #dedede
+		.dark-mode &
+			border-bottom: 1px solid #313943
+
+h1, .h1
+	font-size: 21px
+	font-weight: bold
+
+.fz-30
+	font-size: 30px
+.fz-18
+	font-size: 18px
+.fz-16
+	font-size: 16px
+.fz-14
+	font-size: 14px
+	@media (min-width: 1950px)
+		font-size: 15px
+.fz-13
+	font-size: 13px
+	@media (min-width: 1950px)
+		font-size: 14px
+.fz-12
+	font-size: 12px
+.fz-11
+	font-size: 11px
+	@media (min-width: 1950px)
+		font-size: 13px
+.fz-11a
+	font-size: 9px
+	@media (min-width: 576px)	
+		font-size: 11px
+	@media (min-width: 1950px)
+		font-size: 13px
+.fz-10
+	font-size: 10px
+	@media (min-width: 1950px)
+		font-size: 12px
+.fz-0
+	font-size: 0
+
+.lh-22
+	line-height: 2.2
+.lh-2
+	line-height: 2
+.lh-12
+	line-height: 1.2 !important
+.lh-1
+	line-height: 1 !important
+
+.row:not(.no-gutters)
+	margin-left: -10px
+	margin-right: -10px
+	> [class*="col"]
+		padding-left: 10px
+		padding-right: 10px
+
+.row-1
+	margin-left: -4px !important
+	margin-right: -4px !important
+	> [class*="col"]
+		padding-left: 4px !important
+		padding-right: 4px !important
+
+.row-2
+	margin-left: -2px !important
+	margin-right: -2px !important
+	> [class*="col"]
+		padding-left: 2px !important
+		padding-right: 2px !important
+
+.sidebar-1
+	position: fixed
+	width: 220px
+	top: 0
+	bottom: 0
+	left: 0
+	max-height: 100vh
+	color: #fff
+	display: flex
+	flex-direction: column
+	box-shadow: $box
+	z-index: 1040
+	background-color: #404d56
+	.dark-mode &
+		background: #252b35
+	@media (max-width: 991.98px)	
+		left: auto
+		right: 100%
+	@media (min-width: 1950px)
+		width: 330px
+
+.sidebar-top
+	padding: 10px 15px
+	background: #313b42
+	.dark-mode &
+		background: #1c222a
+	.logo 
+		font-size: 28px
+		color: #fff
+		vertical-align: middle
+	.logo-img
+		width: 10px
+		display: inline-block
+		height: 10px
+		border-radius: 100px
+		background: linear-gradient(to bottom, #ffae34 0%, #e08025 100%)
+		vertical-align: middle
+		margin-right: 4px
+		&:before, &:after
+			content: ''
+			position: absolute
+			top: 4px
+			width: 10px
+			height: 10px
+			border-radius: 100px
+			background: linear-gradient(to bottom, #fd5170 0%, #fa1d42 100%)
+		&:after
+			top: 28px
+			background: linear-gradient(to bottom, #378dff 0%, #1c65df 100%)
+
+.sidebar-bottom
+	flex-grow: 1
+	padding-bottom: 70px
+	overflow: auto
+	&::-webkit-scrollbar
+		display: none
+	.accordion-wrap
+		padding: 15px 15px 15px 10px
+		.dashboard
+			display: block
+			color: #FFF
+			padding: 5px 30px 5px 6px
+			position: relative
+			border-radius: 100px 
+			overflow: hidden
+			font-weight: bold
+			&:before 
+				content: ""
+				position: absolute
+				transition: $transition
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				background: #515e67
+				opacity: 0		
+			&:hover, &.active
+				opacity: 1
+				&:before 
+					opacity: 1		
+			&.active
+				color: #000
+				.dark-mode & 
+					color: #FFF
+				&:before 
+					background: #FFF
+					.dark-mode & 
+						background: #313946
+		.select-user
+			padding: 8px 0
+			position: relative
+			.form-control					
+				border-radius: 100px
+				font-size: 12px
+				padding: 0 12px 0 35px
+				height: 30px
+				@media (min-width: 1950px)
+					font-size: 14px
+				.dark-mode &
+					background: #313946
+					border-color: #313946
+					color: #FFF
+				&:focus
+					box-shadow: none
+			.input-icon
+				position: absolute
+				top: 50%
+				left: 6px
+				width: 20px
+				height: 20px
+				transform: translateY(-50%)
+				cursor: pointer
+
+.network-box
+	padding: 15px 15px 15px 10px
+
+.network
+	display: block
+	border-radius: 14px
+	color: #000 !important
+	position: relative
+	background: #FFF
+	padding: 10px 30px 10px 6px
+	.dark-mode & 
+		background: #313946
+		color: #FFF !important
+	&:hover 
+		opacity: .9
+	.fa-chevron-right
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		right: 15px
+
+.accordion-1
+	.card-body
+		padding: 2px 0 0 35px
+		a 
+			display: block
+			color: #FFF
+			padding-bottom: 6px
+			&.active 
+				opacity: .6
+	.dashboard
+		.fa-chevron-right
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			right: 15px
+			transition: $transition
+		&[aria-expanded="true"]
+			.fa-chevron-right
+				transform: translateY(-50%) rotate(90deg)
+
+.sidebar-2
+	width: 300px
+	display: flex
+	flex-direction: column
+	bottom: 0
+	overflow: auto
+	position: fixed
+	top: 62px
+	right: 0
+	max-height: calc(100vh - 62px)
+	&::-webkit-scrollbar
+		display: none
+	@media (min-width: 1400px)	
+		&.sidebar-absolute 
+			position: absolute
+			max-height: initial
+			.sidebar-2-wrap
+				display: flex
+				flex-direction: column
+				height: 100%
+	@media (max-width: 1399.98px)	
+		top: 0
+		right: auto
+		max-height: 100vh
+		left: 100%
+		z-index: 1030
+	@media (max-width: 349.98px)
+		width: 270px
+	.sidebar-2-wrap
+		background-color: #fff
+		.dark-mode &
+			background-color: #252b35
+		@media (min-width: 1400px)
+			margin-top: 20px
+			margin-bottom: 20px
+			box-shadow: $box
+			border-radius: 14px 0 0 14px
+		@media (min-width: 1950px)
+			margin-right: 20px
+			border-radius: 14px
+			height: 100%
+
+.content
+	padding: 20px 20px 0
+	min-height: calc(100vh - 62px)
+	@media (max-width: 575.98px)
+		padding: 15px 15px 0
+
+.navbar
+	padding: 11px 20px
+	box-shadow: $box
+	@media (max-width: 767.98px)
+		padding: 16px 20px
+	.dark-mode &
+		color: #FFF !important
+		background: #1c222a !important
+	@media (max-width: 575.98px)	
+		padding-left: 15px
+		padding-right: 15px
+
+.dropdown-1
+	.avatar
+		width: 30px
+		height: 30px
+		border-radius: 4px
+		background-color: #DEDEDE
+		background-size: cover
+		background-position: center center
+		display: block
+		&.dropdown-toggle
+			&:after 
+				display: none
+	.dropdown-menu
+		top: 160%
+		border: 0
+		.dark-mode &
+			background: #1c222a
+		.dropdown-item
+			padding: 5px 15px
+			font-size: 12px
+			color: #222222
+			@media (min-width: 1950px)
+				font-size: 14px
+			.dark-mode &
+				color: #FFF
+			&:hover, &:active, &:focus
+				opacity: 1
+				background: #f8f9fa
+				.dark-mode &
+					background: #313946
+			.badge
+				border-radius: 12px
+				width: 19px
+				height: 15px
+				background: #ff3b30
+		.switch-wrap 
+			transition: $transition
+			&:hover 
+				background: #f8f9fa
+				.dark-mode &
+					background: #313946
+		.dropdown-divider 
+			.dark-mode &
+				border-top: 1px solid #313943
+
+.sandwich
+	color: inherit
+	display: block
+	cursor: pointer
+	padding: 0
+	border: 0
+	background: transparent
+	transition: $transition
+	&:before, &:after
+		content: ''
+	span, &:after
+		margin-top: 4px
+	span, &:before, &:after
+		width: 20px
+		display: block
+		transition: $transition
+		transform-origin: left center
+		border-top: 2px solid
+	&.active
+		&:before
+			transform: translateX(3px) translateY(-1px) rotate(45deg)
+		span
+			width: 0
+			opacity: 0
+		&:after
+			transform: translateX(3px) translateY(1px) rotate(-45deg)
+	&:hover 
+		opacity: .8
+#sandwich-1
+	&.active
+		color: initial
+		transform: translateX(55px)
+		.dark-mode &
+			color: #FFF
+	@media (max-width: 991.98px)
+		color: initial
+		transform: translateX(55px)
+		.dark-mode &
+			color: #FFF
+	@media (max-width: 575.98px)
+		transform: translateX(50px) !important
+#sandwich-2
+	@media (min-width: 1400px)
+		display: none
+
+.block
+	padding: 15px
+	+ .block 
+		border-top: 1px solid #F1F1F1
+		.dark-mode &
+			border-top: 1px solid #313943
+	.block 
+		padding-left: 0
+		padding-right: 0
+
+.scroll-wrap
+	flex-grow: 1
+	flex-basis: 0
+	display: flex
+	flex-direction: column
+	overflow: hidden
+	min-height: 160px
+.scroll-wrap-1
+	border-top: 1px solid #F1F1F1
+	min-height: 300px
+	max-height: 700px
+	.colorpoint
+		width: 10px
+		height: 10px
+	.dark-mode &
+		border-top: 1px solid #313943
+.scroll-wrap-2
+	min-height: 232px
+.scroll
+	height: 100%
+	overflow: auto
+	flex-grow: 1
+	padding-right: 15px
+	@media (max-width: 1199.98px)
+		padding-right: 10px
+	&::-webkit-scrollbar
+		width: 4px
+		height: 4px
+	&::-webkit-scrollbar-track
+		background-color: transparent
+		border-radius: 2px
+	&::-webkit-scrollbar-thumb
+		background-color: #F1F1F6
+		border-radius: 2px
+		.dark-mode & 
+			background-color: #313943
+	a 
+		color: #222222
+		.dark-mode &
+			color: #FFF
+
+.cart
+	display: flex
+	flex-direction: column
+	border-radius: 14px
+	box-shadow: $box
+	margin-bottom: 20px
+	height: calc(100% - 20px)
+	background-color: #fff
+	.dark-mode &
+		background-color: #252b35
+	@media (max-width: 575.98px)
+		margin-bottom: 15px
+		height: calc(100% - 15px)
+	.block 
+		padding: 5px 15px 5px 0
+		@media (max-width: 767.98px)
+			padding-right: 10px
+		.block
+			padding-left: 15px
+			padding-right: 0
+		&:not(.scroll-wrap)
+			padding-right: 0
+			.block
+				padding-right: 15px
+.cart-content
+	padding: 15px
+.cart-content-2
+	background: linear-gradient(to bottom, #c434fe 0%, #a502ea 100%)
+	.dark-mode &
+		background: #252b35
+	.carousel-name-2
+		.dark-mode &
+			color: #b015f1
+.cart-content-3
+	background: linear-gradient(to right, #fe5700 0%, #ff8f2e 100%)
+	.dark-mode &
+		background: #252b35
+	.carousel-name-3
+		.dark-mode &
+			color: #fe5700
+.cart-content-4
+	background: linear-gradient(to left, #6ac4fd 0%, #0d96e2 100%)
+	.dark-mode &
+		background: #252b35
+	.carousel-name-4
+		.dark-mode &
+			color: #189ce5
+.cart-content-5
+	background: linear-gradient(to left, #05a89d 0%, #67e7d7 100%)
+	.dark-mode &
+		background: #252b35
+	.carousel-name-5
+		.dark-mode &
+			color: #05a89d
+.cart-content-6
+	background: linear-gradient(to left, #d6a204 0%, #f7db02 100%)
+	.dark-mode &
+		background: #252b35
+	.carousel-name-6
+		.dark-mode &
+			color: #d6a204
+
+#reportrange
+	color: #222222	
+	.dark-mode & 
+		color: #FFF
+	+ .fa-chevron-right
+		position: absolute
+		top: 6px
+		transform: translateY(-50%) rotate(90deg)
+		right: -11px
+		transition: $transition
+		font-size: 9px
+	&:hover
+		+ .fa-chevron-right
+			opacity: .6
+
+.daterangepicker:not(.single)
+	top: 60px !important
+	right: 20px !important
+	position: fixed
+	overflow: auto
+	border: 0
+	max-height: calc(100vh - 124px)
+	@media (max-width: 339.98px)
+		max-height: calc(100vh - 144px)
+	&:before, &:after, .drp-selected
+		display: none
+
+.daterangepicker
+	.dark-mode & 
+		background: #1c222a
+	.drp-buttons 
+		.dark-mode & 
+			border-top: 1px solid #313943	
+		.btn
+			.dark-mode & 
+				color: #FFF
+				transition: $transition
+				&:hover 
+					opacity: .6
+	.calendar-table
+		.dark-mode & 
+			background: #1c222a
+			border-color: #1c222a
+	.available 
+		&:hover 
+			.dark-mode & 
+				background: #313946
+		span
+			.dark-mode & 
+				border-color: #FFF
+	tbody .off 
+		.dark-mode &
+			background: #1c222a
+
+.owl-carousel
+	&.owl-theme
+		.owl-dots
+			margin-top: 0 !important
+			.owl-dot 
+				span
+					background: rgba(239, 239, 239, .5)
+					box-shadow: 0 1px 1px rgba(0, 0, 0, .5)
+					transition: $transition
+					width: 6px
+					height: 6px
+					margin: 2px
+					.dark-mode &
+						background: rgba(49, 57, 67, .8)
+				&.active, &:hover
+					span
+						background: #FFF
+						box-shadow: inset 0 1px 1px rgba(0, 0, 0, .5)
+
+.owl-2 
+	&.owl-theme
+		.owl-dots
+			display: inline-block 
+			position: absolute
+			right: 14px
+			top: -33px
+			.owl-dot 
+				span
+					margin: 12px 2px 2px
+		img
+			width: 11px
+			display: inline-block
+
+.owl-3 
+	&.owl-theme
+		.owl-dots
+			display: inline-block 
+			position: absolute
+			left: 76px
+			top: -49px
+			.owl-dot 
+				span
+					margin: 12px 2px 2px
+
+.owl-5 
+	flex-grow: 1
+	flex-basis: 0
+	min-height: 365px
+	.owl-stage-outer, .owl-stage, .owl-item, .owl-item > .block
+		height: 100%
+	&.owl-theme
+		.owl-dots
+			display: inline-block 
+			position: absolute
+			right: 35px
+			top: -30px
+			.owl-dot 
+				span
+					margin: 12px 2px 2px
+
+.fas-2
+	font-size: 8px
+	width: 12px
+	height: 12px
+	color: #FFF
+	border-radius: 100px
+	text-align: center
+	line-height: 12px
+	background: #b9b9b9
+	.dark-mode &
+		color: #000
+		background: #FFF
+	&:hover 
+		color: #FFF
+		.dark-mode &
+			color: #000
+.fas-3
+	background: #0081ff
+	.dark-mode &
+		background: #0081ff
+.fas-4 
+	line-height: 8px
+	transition: opacity .3s
+	&.collapsed
+		line-height: 12px
+		&.fa-window-minimize
+			&:before
+				content: "\f067"
+
+.links
+	background-image: url(../img/icon-13.png)
+	background-size: cover
+	display: inline-block
+	border-radius: 100px
+	width: 18px
+	height: 18px
+	margin-right: 2px
+.links-2
+	background-image: url(../img/icon-14.png)
+.links-3
+	background-image: url(../img/icon-15.png)
+
+.colorpoint
+	width: 8px
+	height: 8px
+	border-radius: 100px
+	display: inline-block
+	margin-right: 2px
+
+.colorpoint-1
+	background: linear-gradient(to bottom, #fd5170 0%, #fa1d42 100%)
+.colorpoint-2
+	background: linear-gradient(to bottom, #ffae34 0%, #e08025 100%)
+.colorpoint-3
+	background: linear-gradient(to bottom, #00fdb6 0%, #04cf80 100%)
+.colorpoint-4
+	background: linear-gradient(to bottom, #378dff 0%, #1c65df 100%)
+.colorpoint-5
+	background: linear-gradient(to bottom, #882bf4 0%, #591c9f 100%)
+.colorpoint-6
+	background: linear-gradient(to bottom, #fdd300 0%, #e8b200 100%)
+.colorpoint-7
+	background: linear-gradient(to bottom, #44fc3c 0%, #3cdf33 100%)
+
+.pills
+	display: inline-block
+	border-radius: 100px
+	color: #FFF
+	padding: 2px 8px
+	font-weight: bold
+
+.tooltip-inner
+	font-size: 10px
+
+.linesteps
+	.colorpoint
+		position: relative
+		&:before 
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			height: 40px
+			border-left: 1px dotted #dedede 
+			transform: translateX(-50%)
+			z-index: -1
+	> [class*=col], tr
+		> .row, th
+			&:last-child
+				.colorpoint
+					&:before
+						display: none
+					
+.table-1
+	.dark-mode &
+		color: #FFF
+	th, td
+		padding-left: 0
+		padding-right: 0
+		vertical-align: middle
+		font-weight: normal
+	thead tr th 
+		font-weight: normal !important
+	tr 
+		th:first-child
+			white-space: nowrap
+			padding-right: 5px
+		th, td 
+			&:last-child
+				text-align: right
+		th, td 
+			&:nth-child(3)
+				text-align: center
+				width: 100%
+				padding-left: 5px
+				padding-right: 20px
+	.progress
+		height: 6px
+		border-radius: 100px
+		position: relative
+		background: #FFF
+		overflow: visible
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, .35)
+		&:before 
+			content: ""
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 4px
+			height: 4px
+			border-radius: 100px
+			background: #FFF
+			box-shadow: 0 1px 1px rgba(0, 0, 0, .5)
+		.progress-bar
+			background: #fd8741		
+			height: 6px
+			border-top-left-radius: 7px
+			border-bottom-left-radius: 7px
+			box-shadow: 0 1px 2px rgba(0, 0, 0, .35)
+		.progress-bar-2
+			background: #33f456
+		.progress-bar-3
+			background: #fd5446
+		.bar 
+			position: absolute
+			color: #000
+			font-size: 15px
+			text-align: center
+			line-height: 25px
+			font-weight: bold
+			top: 50%
+			left: 75%
+			transform: translateY(-50%)
+			width: 25px
+			height: 25px
+			border-radius: 100px
+			background: #FFF
+			box-shadow: 0 1px 2px rgba(0, 0, 0, .5)
+			margin-left: -12.5px
+		.bar-2
+			left: 40%
+		.bar-3
+			left: 90%
+		.bar-4
+			left: 20%
+		.bar-5
+			left: 35%
+		.bar-6
+			left: 85%
+
+.table-2
+	.dark-mode &
+		color: #FFF
+	th, td
+		vertical-align: middle
+		padding-top: 6px
+		padding-bottom: 6px
+		white-space: nowrap
+		&:not(:first-child)
+			text-align: center
+	a 
+		color: #222222
+		.dark-mode &
+			color: #FFF
+	tbody 
+		tr 
+			th:first-child
+				font-weight: normal
+			td
+				&:nth-child(3), &:nth-child(4)
+					font-size: 18px
+					font-weight: bold
+			+ tr 
+				border-top: 1px solid #F1F1F1
+				.dark-mode &
+					border-top: 1px solid #313943
+				
+.canvas-wrap
+	flex-grow: 1
+	position: relative
+	margin-top: 16px
+	min-height: 200px
+	canvas
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+
+.canvas-wrap-2
+	height: 60px
+	position: relative
+	margin-top: 1rem
+	@media (min-width: 576px)
+		margin-left: 1rem
+		margin-right: 1rem
+	canvas
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+
+.canvas-wrap-3
+	@media (min-width: 576px)
+		min-height: 290px
+
+.switch-wrap
+	display: flex
+	align-items: center
+	cursor: pointer
+	position: relative
+	padding: 5px 15px
+	span 
+		flex-grow: 1
+		flex-basis: 0
+		max-width: 100%
+		font-size: 12px 
+		color: #222222 
+		@media (min-width: 1950px)
+			font-size: 14px
+		.dark-mode &
+			color: #FFF
+	.lever
+		flex: 0 0 auto
+		position: relative
+		width: 1.75rem
+		height: 1rem
+		background-color: gray 
+		border-radius: 100px
+		margin-right: 5px
+		border-color: #ff3b30
+		background-color: #ff3b30
+		&:last-child
+			margin-right: 0
+			margin-left: 5px
+		&:after
+			content: ""
+			position: absolute
+			width: 12px
+			height: 12px
+			margin-top: -6px
+			background-color: #fff
+			border-radius: 100px
+			left: 2px
+			top: 50%
+			transition: .3s
+	input
+		opacity: 0
+		width: 0
+		height: 0
+		position: absolute
+		&:checked ~ .lever
+			border-color: #4cd964
+			background-color: #4cd964
+			&:after
+				left: 14px
+
+.switch-wrap-2
+	display: inline-flex
+	padding: 0
+	margin-right: 16px
+	position: relative
+	.lever
+		margin-left: 0 !important
+		margin-right: 0 !important
+		height: 20px
+		width: 40px
+		border-color: #efefef
+		background-color: #efefef
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .5) 
+		.dark-mode &
+			border-color: #15191e
+			background-color: #15191e
+		&:after
+			content: "f"
+			color: #FFF
+			position: absolute
+			text-align: center
+			line-height: 20px
+			width: 20px
+			height: 20px
+			margin-top: -10px
+			background-color: #0079bb
+			border-radius: 100px
+			left: 0
+			top: 50%
+			transition: .3s
+			z-index: 5
+	input
+		&:checked ~ .lever
+			border-color: #efefef
+			background-color: #efefef
+			.dark-mode &
+				border-color: #15191e
+				background-color: #15191e
+			&:after 
+				content: "in"
+				left: 20px
+	.lever-in1, .lever-in2
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		left: 8px
+		color: #8d8d8d	
+	.lever-in2
+		left: auto
+		right: 6px
+
+.click-slide.abs
+	position: absolute
+	cursor: pointer
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	~ .owl-1 
+		pointer-events: none
+		.owl-dots .owl-dot span
+			pointer-events: initial
+
+.dropdown-2
+	.dropdown-toggle
+		&:after 
+			display: none
+	.dropdown-menu
+		width: 310px
+		overflow: hidden
+		border: 0
+		border-radius: 14px
+		margin-left: 0
+		.dark-mode &
+			background: #1c222a
+			color: #FFF
+		@media (max-width: 767.98px)
+			top: calc(100% + .5rem) !important
+			transform: none !important
+		@media (max-width: 575.98px)
+			width: calc(100vw - 20px)
+		@media (min-width: 768px)
+			margin-left: 30px 
+		.dropdown-2-head
+			padding: 16px
+		.nav-tabs
+			border-bottom: 0	
+			.nav-link 
+				border-radius: 100px
+				border: 1px solid transparent
+				font-weight: bold
+				color: #000
+				padding: 6px 12px
+				max-width: 120px
+				width: 120px
+				text-align: center
+				.dark-mode &
+					color: #FFF
+				&.active 
+					background: #eeeef3
+					border: 1px solid #dee2e6
+					.dark-mode &
+						background: #313946
+						color: #FFF
+						border: 1px solid #313946
+		.dropdown-2-body
+			padding: 8px 16px 0
+			.tab-content
+				.tab-box
+					height: 400px
+					overflow: auto
+					@media (max-width: 767.98px)
+						height: 300px
+					@media (max-width: 339.98px)
+						height: 180px
+					&::-webkit-scrollbar
+						display: none
+				.radio-group
+					display: block
+					margin-bottom: 4px
+					cursor: pointer
+					&:last-child
+						margin-bottom: 16px
+					input
+						display: none
+						~ span
+							padding: 7px 12px
+							display: block
+							text-align: center
+						&:checked, &:hover
+							~ span
+								transition: $transition
+								background: #eeeef3
+								border-radius: 100px
+								.dark-mode &
+									background: #313946
+						&:checked
+							~ span		
+								font-weight: bold
+					
+.popover-body
+	.dark-mode &
+		color: #FFF
+		background: #1c222a
+.bs-popover-bottom
+	.arrow 
+		&:after 
+			.dark-mode &
+				border-bottom-color: #1c222a
+
+// Stories-show
+
+.arrow-link
+	width: 20px
+	height: 20px
+	line-height: 20px
+	background: #b9b9b9
+	border-radius: 100px
+	display: inline-block
+	text-align: center
+	margin-right: 2px
+	font-size: 0
+
+.performance
+	width: 55px
+	height: 25px
+	line-height: 25px
+	color: #FFF
+	background: #02d79d
+	border-radius: 100px
+	display: inline-block
+	text-align: center
+	margin-right: 4px
+
+.long
+	white-space: nowrap
+	text-overflow: ellipsis
+	overflow: hidden
+
+.col-art-xl-4
+	@media(min-width: 1200px) and (max-width: 1399.98px)
+		flex: 0 0 33.333333%
+		max-width: 33.333333%
+
+// Stories-index
+
+.form-inline-1
+	.custom-select
+		font-size: 13px
+		background-color: #f1f1f6
+		border: 0
+		font-weight: bold
+		.dark-mode &
+			background-color: #1c222a
+			color: #FFF
+		&:focus 
+			box-shadow: none
+
+.pagination
+	.page-link
+		background: #f1f1f6
+		color: #000
+		border: none
+		.dark-mode &
+			color: #FFF
+			background: #1c222a
+		&:focus 
+			box-shadow: none
+
+.col-xl-24
+	@media(min-width: 1366px)
+		flex: 0 0 20%
+		max-width: 20%
+
+// PITCHES
+
+.container-pitches
+	padding-left: 15px
+	padding-right: 15px
+	@media(min-width: 576px)
+		padding-left: 50px
+		padding-right: 50px
+	@media(min-width: 1450px)
+		padding-left: 110px
+		padding-right: 110px
+	@media(min-width: 1550px)
+		padding-right: 220px
+	.nav-pills 
+		.nav-link
+			font-size: 14px
+			text-align: center
+			color: #c8c8c8
+			margin-bottom: 28px
+			position: relative
+			padding-top: 4px
+			padding-bottom: 4px
+			padding-left: 30px
+			.pills-number
+				position: absolute
+				top: 50%
+				height: 21px
+				width: 21px
+				background: #f1f1f6
+				color: #FFF
+				border-radius: 100px
+				left: 4px	
+				transform: translateY(-50%)
+				.dark-mode &
+					background: #313946
+			&.active 
+				background: #f1f1f6
+				color: #000
+				font-weight: bold
+				.dark-mode &
+					background: #313946
+					color: #FFF
+				.pills-number
+					background: #FFF
+					color: #000
+			&:not(:last-child)
+				&:before 
+					content: ''
+					position: absolute
+					top: calc(100% + 2px)
+					left: 50%
+					height: 24px
+					border-left: 1px dotted #dadada
+					transform: translateX(-50%)
+
+.form-search-2
+	input
+		padding-top: 4px
+		padding-bottom: 4px
+		height: 34px
+		margin-top: 12px
+		margin-bottom: 12px
+		width: 100% !important
+		font-size: 14px
+		&::-webkit-input-placeholder
+			color: #a2a2a2
+		&::-moz-placeholder
+			color: #a2a2a2
+		&:-ms-input-placeholder
+			color: #a2a2a2
+		&:focus
+			box-shadow: none
+		.dark-mode &
+			background: #313946
+			border-color: #313946
+			color: #FFF
+
+.form-inline-2
+	.custom-select
+		background: #fff url(../img/arrow.png) no-repeat right .75rem center/8px 6px
+		padding-top: 4px
+		padding-bottom: 4px
+		height: 34px
+		font-size: 14px
+		&:focus 
+			box-shadow: none
+		.dark-mode &
+			background: #313946 url(../img/arrow.png) no-repeat right .75rem center/8px 6px
+			border-color: #313946
+			color: #FFF
+
+.calendar-pitches
+	position: absolute 
+	top: 50%
+	right: 10px
+	transform: translateY(-50%)
+
+.form-control-pitches
+	&:focus
+		box-shadow: none
+	font-size: 14px
+	color: #a2a2a2
+	.dark-mode &
+		background: #313946
+		border-color: #313946
+		color: #FFF
+
+.form-textarea
+	height: 180px !important
+	resize: none
+	padding: 16px
+	font-size: 14px
+	&:focus 
+		box-shadow: none
+	.dark-mode &
+		background: #313946
+		border-color: #313946
+		color: #FFF
+
+.qq-gallery.qq-uploader
+	background-color: #FFF
+	min-height: 155px
+	.qq-upload-fail
+		z-index: 99
+	&:before 
+		font-size: 14px
+		opacity: 1
+	.dark-mode &
+		background: #313946
+		border-color: #313946
+		color: #FFF
+
+.plus
+	height: 16px
+	width: 16px
+	display: inline-block
+	border-radius: 100px
+	background: #2c8bf3
+	color: #FFF
+	text-align: center
+	line-height: 16px
+	&:hover
+		color: #FFF
+
+.btn-pitches
+	max-width: 160px
+	width: 100%
+
+.w-1550
+	@media (min-width: 1950px)
+		max-width: 1620px
+		margin-left: auto
+		margin-right: auto
+		.sidebar-2 
+			position: initial
+			max-height: initial
+			width: 380px
+	&.display-flex 
+		display: flex
+		@media (max-width: 1949.98px)
+			display: block 
+
+.form-dropdown
+	position: relative
+	width: 40%
+	transition: $transition
+	margin-left: 218px
+	@media (max-width: 991.98px)
+		margin-left: 34px
+	@media (max-width: 767.98px)
+		margin-left: 0
+		margin-bottom: 20px
+		width: 100%
+	@media (min-width: 1950px)
+		margin-left: 328px
+	&.form-transform
+		margin-left: 33px
+		@media (max-width: 767.98px)
+			margin-left: 0
+	button
+		transition: $transition
+		position: absolute
+		background: none
+		border: none
+		top: 50%
+		transform: translateY(-50%)
+		left: 14px
+		padding: 0
+		font-size: 14px
+		&:hover
+			opacity: .6
+	.form-control
+		padding: 4px 15px
+		height: 40px
+		border-radius: 100px
+		padding-left: 40px
+		background: #fff
+		width: 100%	
+		transition: none
+		box-shadow: 0 1px 0 rgba(196, 196, 196, .35)
+		.dark-mode &
+			background: #313946
+			color: #FFF !important
+			&::-webkit-input-placeholder
+				color: #FFF
+			&::-moz-placeholder
+				color: #FFF
+			&:-ms-input-placeholder
+				color: #FFF
+	.dropdown-menu 
+		margin-top: 0
+		.dark-mode &
+			background: #313946
+	&.show
+		.form-control
+			border-radius: 15px 15px 0 0
+			box-shadow: none
+			border: 1px solid rgba(196, 196, 196, .35)
+			border-bottom: 0
+			.dark-mode &
+				color: #FFF !important
+
+.search-dropdown
+	border-radius: 0 0 25px 25px
+	box-shadow: none
+	border: 1px solid rgba(196, 196, 196, .35)
+	border-top: 0
+	.loc-border
+		border-top: 1px solid rgba(196, 196, 196, .35)
+		padding: 14px 0
+		.news-box
+			padding: 0 10px
+			.news
+				display: block
+				padding: 6px 10px
+				border-radius: 12px
+				font-size: 12px
+				color: #8b8b8b
+				@media (max-width: 991.98px)
+					padding: 6px 4px
+				@media (min-width: 1950px)
+					font-size: 16px
+				.title
+					font-size: 13px
+					color: #000
+					line-height: 1.2
+					padding-bottom: 2px
+					text-overflow: ellipsis
+					overflow: hidden
+					@media (min-width: 1950px)
+						font-size: 18px
+					.dark-mode & 
+						color: #FFF
+				.date
+					font-size: 11px
+					@media (min-width: 1950px)
+						font-size: 14px
+				&:hover
+					opacity: 1
+					background: #ebebf1
+					.title
+						font-weight: bold
+					.dark-mode &
+						background: #1a1d21
+
+.search-inside
+	max-height: 530px
+	overflow: auto
+	flex-grow: 1
+	@media (max-width: 575.98px)
+		max-height: 390px
+	&::-webkit-scrollbar
+		width: 4px
+		height: 4px
+	&::-webkit-scrollbar-track
+		background-color: transparent
+		border-radius: 2px
+	&::-webkit-scrollbar-thumb
+		background-color: #F1F1F6
+		border-radius: 2px
+		.dark-mode & 
+			background-color: #1a1d21
+
+.w-18
+	width: 18px
+
+// PROMOTION
+
+.cart-promotion
+	background-color: transparent
+	border-radius: 0
+	box-shadow: none
+	.dark-mode &
+		background: transparent
+
+.w-300
+	@media (min-width: 1200px)
+		width: 300px
+
+.cart-promotion-white
+	background: #FFF
+	border-radius: 8px
+	border: 1px solid #e0e0e0
+	margin-bottom: 20px
+	.dark-mode &
+		background: #1c222a
+		border: 0
+	.cart-box
+		padding: 24px 20px
+
+.cart-box-metrics
+	.metric-1
+		font-weight: bold 
+		padding-left: 10px
+		font-size: 14px
+	.metric-2
+		padding-left: 24px
+		font-size: 14px
+	.metric-selected, .metric-alert
+		padding-left: 38px
+		font-size: 14px
+	.metric-selected
+		pointer-events: none
+
+.close-metrics
+	pointer-events: auto
+
+.nav-tabs-promotion
+	padding: 15px 10px
+	border: 1px solid #e0e0e0
+	border-radius: 5px 5px 0 0
+	.dark-mode &
+		border-color: #313943
+	@media (max-width: 575.98px)
+		display: inline-block
+		margin-bottom: 24px
+	.nav-link
+		text-align: center
+		font-weight: bold 
+		font-size: 14px
+		margin: 0 10px
+		color: #222222
+		border: 1px solid #e0e0e0
+		border-radius: 5px
+		padding: 6px 16px
+		.dark-mode &
+			border-color: #313943
+			color: #FFF
+		@media (min-width: 576px)
+			width: calc(33.33% - 20px)
+		&:hover
+			background: #f1f1f6
+			opacity: 1
+			.dark-mode &
+				color: #222222
+		&.active
+			background: #f1f1f6
+			opacity: 1
+			color: #222222
+			border: 1px solid #e0e0e0
+
+.promotion-box
+	padding-right: 15px
+	border: 1px solid #e0e0e0
+	border-radius: 0 0 5px 5px 
+	padding: 10px 10px 10px 40px
+	.dark-mode &
+		border-color: #313943
+	@media (max-width: 575.98px)
+		padding: 10px 10px 10px 16px
+
+.tab-content-promotion
+	max-height: 370px 
+	overflow: auto
+
+.accordion-promotion
+	.item 
+		padding: 4px 
+		.accordion-link
+			color: #222222
+			font-weight: bold
+			font-size: 14px
+			transition: $transition
+			.dark-mode &
+				color: #FFF
+			img	
+				width: 8px
+				transition: $transition
+				@media (max-width: 575.98px)
+					width: 6px !important
+			&[aria-expanded="true"]
+				img	
+					transform: rotate(90deg)
+		.content-box
+			padding: 2px 0 2px 16px
+			font-size: 14px
+	.form-control
+		font-size: 13px
+		.dark-mode &
+			background: #313946
+			border-color: #313946
+			color: #FFF
+		&:focus
+			box-shadow: none
+
+	input[type="checkbox"]
+		display: none
+		~ .fa-check
+			padding: 3px
+			font-size: 9px
+			color: transparent
+			cursor: pointer
+			border: 1px solid #ced4da
+			border-radius: 3px
+		&:checked
+			~ .fa-check
+				transition: $transition
+				color: #FFF
+				background: #0081ff
