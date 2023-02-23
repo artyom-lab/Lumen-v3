@@ -2,23 +2,49 @@
 $transition: .3s
 $box: 0 1px 1px rgba(0, 0, 0, .1)
 
+$color-black: #000
+$color-white: #FFF
+$color-red: #fc5c5c
+$color-green: #3ad654
+$color-blue: #05a7ff
+$color-orange: #e88903
+$color-turquoise: #33bfb1
+$color-gray: #b9b9b9
+$color-gray2: #6c7884
+$bg-gray: #f1f1f6
+$color-darkmode: #1c222a
+$color-darkmode2: #1a1d21
+$bg-darkmode: #313946
+$color-body: #222222
+$color-border: #dedede
+$color-border-dark: #313943
+$color-block: #F1F1F1
+$color-scroll: #F1F1F6
+$color-checkbox: #0081ff
+$color-badge: #ff3b30
+$color-input: #efefef
+$color-performance: #02d79d
+$color-promotion: #e0e0e0
+
 .red
-	color: #fc5c5c
+	color: $color-red
 .green 
-	color: #3ad654
+	color: $color-green
 .blue 
-	color: #05a7ff
+	color: $color-blue
 .orange
-	color: #e88903
+	color: $color-orange
+.turquoise
+	color: $color-turquoise
 .gray
-	color: #b9b9b9
+	color: $color-gray
 .gray2
-	color: #6c7884
+	color: $color-gray2
 .bg-gray
-	background: #f1f1f6
+	background: $bg-gray
 	border-radius: 0 0 8px 8px
 	.dark-mode &
-		background: #1c222a
+		background: $color-darkmode
 
 body
 	font-family: 'Roboto', sans-serif
@@ -27,13 +53,13 @@ body
 	transition: $transition
 	padding-top: 62px
 	position: relative
-	color: #222222
+	color: $color-body
 	background-color: #EFEFF4
 	@media (min-width: 1950px)
 		font-size: 15px
 	&.dark-mode 
-		color: #FFF
-		background-color: #1a1d21
+		color: $color-white
+		background-color: $color-darkmode2
 	@media (min-width: 992px)
 		padding-left: 220px
 	@media (min-width: 1400px)
@@ -127,25 +153,25 @@ img
 	border-radius: 100px
 
 .br 
-	border-right: 1px solid #dedede
+	border-right: 1px solid $color-border
 	.dark-mode &
-		border-right: 1px solid #313943
+		border-right: 1px solid $color-border-dark
 
 .bb 
-	border-bottom: 1px solid #dedede
+	border-bottom: 1px solid $color-border
 	.dark-mode &
-		border-bottom: 1px solid #313943
+		border-bottom: 1px solid $color-border-dark
 
 .bb2
-	border-bottom: 2px solid #dedede
+	border-bottom: 2px solid $color-border
 	.dark-mode &
-		border-bottom: 2px solid #313943
+		border-bottom: 2px solid $color-border-dark
 
 .bb3
 	@media (max-width: 575.98px)
-		border-bottom: 1px solid #dedede
+		border-bottom: 1px solid $color-border
 		.dark-mode &
-			border-bottom: 1px solid #313943
+			border-bottom: 1px solid $color-border-dark
 
 h1, .h1
 	font-size: 21px
@@ -157,6 +183,8 @@ h1, .h1
 	font-size: 18px
 .fz-16
 	font-size: 16px
+.fz-15
+	font-size: 15px
 .fz-14
 	font-size: 14px
 	@media (min-width: 1950px)
@@ -221,7 +249,7 @@ h1, .h1
 	bottom: 0
 	left: 0
 	max-height: 100vh
-	color: #fff
+	color: $color-white
 	display: flex
 	flex-direction: column
 	box-shadow: $box
@@ -239,10 +267,10 @@ h1, .h1
 	padding: 10px 15px
 	background: #313b42
 	.dark-mode &
-		background: #1c222a
+		background: $color-darkmode
 	.logo 
 		font-size: 28px
-		color: #fff
+		color: $color-white
 		vertical-align: middle
 	.logo-img
 		width: 10px
@@ -274,7 +302,7 @@ h1, .h1
 		padding: 15px 15px 15px 10px
 		.dashboard
 			display: block
-			color: #FFF
+			color: $color-white
 			padding: 5px 30px 5px 6px
 			position: relative
 			border-radius: 100px 
@@ -295,13 +323,13 @@ h1, .h1
 				&:before 
 					opacity: 1		
 			&.active
-				color: #000
+				color: $color-black
 				.dark-mode & 
-					color: #FFF
+					color: $color-white
 				&:before 
-					background: #FFF
+					background: $color-white
 					.dark-mode & 
-						background: #313946
+						background: $bg-darkmode
 		.select-user
 			padding: 8px 0
 			position: relative
@@ -313,9 +341,9 @@ h1, .h1
 				@media (min-width: 1950px)
 					font-size: 14px
 				.dark-mode &
-					background: #313946
-					border-color: #313946
-					color: #FFF
+					background: $bg-darkmode
+					border-color: $bg-darkmode
+					color: $color-white
 				&:focus
 					box-shadow: none
 			.input-icon
@@ -333,13 +361,13 @@ h1, .h1
 .network
 	display: block
 	border-radius: 14px
-	color: #000 !important
+	color: $color-black !important
 	position: relative
-	background: #FFF
+	background: $color-white
 	padding: 10px 30px 10px 6px
 	.dark-mode & 
-		background: #313946
-		color: #FFF !important
+		background: $bg-darkmode
+		color: $color-white !important
 	&:hover 
 		opacity: .9
 	.fa-chevron-right
@@ -353,7 +381,7 @@ h1, .h1
 		padding: 2px 0 0 35px
 		a 
 			display: block
-			color: #FFF
+			color: $color-white
 			padding-bottom: 6px
 			&.active 
 				opacity: .6
@@ -397,7 +425,7 @@ h1, .h1
 	@media (max-width: 349.98px)
 		width: 270px
 	.sidebar-2-wrap
-		background-color: #fff
+		background-color: $color-white
 		.dark-mode &
 			background-color: #252b35
 		@media (min-width: 1400px)
@@ -422,8 +450,8 @@ h1, .h1
 	@media (max-width: 767.98px)
 		padding: 16px 20px
 	.dark-mode &
-		color: #FFF !important
-		background: #1c222a !important
+		color: $color-white !important
+		background: $color-darkmode !important
 	@media (max-width: 575.98px)	
 		padding-left: 15px
 		padding-right: 15px
@@ -433,7 +461,7 @@ h1, .h1
 		width: 30px
 		height: 30px
 		border-radius: 4px
-		background-color: #DEDEDE
+		background-color: $color-border
 		background-size: cover
 		background-position: center center
 		display: block
@@ -444,34 +472,34 @@ h1, .h1
 		top: 160%
 		border: 0
 		.dark-mode &
-			background: #1c222a
+			background: $color-darkmode
 		.dropdown-item
 			padding: 5px 15px
 			font-size: 12px
-			color: #222222
+			color: $color-body
 			@media (min-width: 1950px)
 				font-size: 14px
 			.dark-mode &
-				color: #FFF
+				color: $color-white
 			&:hover, &:active, &:focus
 				opacity: 1
 				background: #f8f9fa
 				.dark-mode &
-					background: #313946
+					background: $bg-darkmode
 			.badge
 				border-radius: 12px
 				width: 19px
 				height: 15px
-				background: #ff3b30
+				background: $color-badge
 		.switch-wrap 
 			transition: $transition
 			&:hover 
 				background: #f8f9fa
 				.dark-mode &
-					background: #313946
+					background: $bg-darkmode
 		.dropdown-divider 
 			.dark-mode &
-				border-top: 1px solid #313943
+				border-top: 1px solid $color-border-dark
 
 .sandwich
 	color: inherit
@@ -506,12 +534,12 @@ h1, .h1
 		color: initial
 		transform: translateX(55px)
 		.dark-mode &
-			color: #FFF
+			color: $color-white
 	@media (max-width: 991.98px)
 		color: initial
 		transform: translateX(55px)
 		.dark-mode &
-			color: #FFF
+			color: $color-white
 	@media (max-width: 575.98px)
 		transform: translateX(50px) !important
 #sandwich-2
@@ -521,9 +549,9 @@ h1, .h1
 .block
 	padding: 15px
 	+ .block 
-		border-top: 1px solid #F1F1F1
+		border-top: 1px solid $color-block
 		.dark-mode &
-			border-top: 1px solid #313943
+			border-top: 1px solid $color-border-dark
 	.block 
 		padding-left: 0
 		padding-right: 0
@@ -536,14 +564,14 @@ h1, .h1
 	overflow: hidden
 	min-height: 160px
 .scroll-wrap-1
-	border-top: 1px solid #F1F1F1
+	border-top: 1px solid $color-block
 	min-height: 300px
 	max-height: 700px
 	.colorpoint
 		width: 10px
 		height: 10px
 	.dark-mode &
-		border-top: 1px solid #313943
+		border-top: 1px solid $color-border-dark
 .scroll-wrap-2
 	min-height: 232px
 .scroll
@@ -560,14 +588,14 @@ h1, .h1
 		background-color: transparent
 		border-radius: 2px
 	&::-webkit-scrollbar-thumb
-		background-color: #F1F1F6
+		background-color: $color-scroll
 		border-radius: 2px
 		.dark-mode & 
-			background-color: #313943
+			background-color: $color-border-dark
 	a 
-		color: #222222
+		color: $color-body
 		.dark-mode &
-			color: #FFF
+			color: $color-white
 
 .cart
 	display: flex
@@ -576,7 +604,7 @@ h1, .h1
 	box-shadow: $box
 	margin-bottom: 20px
 	height: calc(100% - 20px)
-	background-color: #fff
+	background-color: $color-white
 	.dark-mode &
 		background-color: #252b35
 	@media (max-width: 575.98px)
@@ -632,9 +660,9 @@ h1, .h1
 			color: #d6a204
 
 #reportrange
-	color: #222222	
+	color: $color-body	
 	.dark-mode & 
-		color: #FFF
+		color: $color-white
 	+ .fa-chevron-right
 		position: absolute
 		top: 6px
@@ -660,30 +688,30 @@ h1, .h1
 
 .daterangepicker
 	.dark-mode & 
-		background: #1c222a
+		background: $color-darkmode
 	.drp-buttons 
 		.dark-mode & 
-			border-top: 1px solid #313943	
+			border-top: 1px solid $color-border-dark
 		.btn
 			.dark-mode & 
-				color: #FFF
+				color: $color-white
 				transition: $transition
 				&:hover 
 					opacity: .6
 	.calendar-table
 		.dark-mode & 
-			background: #1c222a
-			border-color: #1c222a
+			background: $color-darkmode
+			border-color: $color-darkmode
 	.available 
 		&:hover 
 			.dark-mode & 
-				background: #313946
+				background: $bg-darkmode
 		span
 			.dark-mode & 
-				border-color: #FFF
+				border-color: $color-white
 	tbody .off 
 		.dark-mode &
-			background: #1c222a
+			background: $color-darkmode
 
 .owl-carousel
 	&.owl-theme
@@ -701,8 +729,53 @@ h1, .h1
 						background: rgba(49, 57, 67, .8)
 				&.active, &:hover
 					span
-						background: #FFF
+						background: $color-white
 						box-shadow: inset 0 1px 1px rgba(0, 0, 0, .5)
+	&.owl-dots-big
+		.owl-dots
+			.owl-dot 
+				span
+					box-shadow: none
+					width: 12px
+					height: 12px
+					border: 2px solid transparent
+					.dark-mode &
+				&.active, &:hover
+					span
+						background: $color-white !important
+						box-shadow: none
+						.dark-mode &
+							background: rgba(49, 57, 67, .8) !important
+		&.owl-red
+			.owl-dots
+				.owl-dot 
+					span
+						background: $color-red
+						.dark-mode &
+							background: $color-red
+					&.active, &:hover
+						span
+							border: 2px solid $color-red
+		&.owl-orange
+			.owl-dots
+				.owl-dot 
+					span
+						background: $color-orange
+						.dark-mode &
+							background: $color-orange
+					&.active, &:hover
+						span
+							border: 2px solid $color-orange
+		&.owl-blue
+			.owl-dots
+				.owl-dot 
+					span
+						background: $color-blue
+						.dark-mode &
+							background: $color-blue
+					&.active, &:hover
+						span
+							border: 2px solid $color-blue
 
 .owl-2 
 	&.owl-theme
@@ -749,22 +822,22 @@ h1, .h1
 	font-size: 8px
 	width: 12px
 	height: 12px
-	color: #FFF
+	color: $color-white
 	border-radius: 100px
 	text-align: center
 	line-height: 12px
-	background: #b9b9b9
+	background: $color-gray
 	.dark-mode &
-		color: #000
-		background: #FFF
+		color: $color-black
+		background: $color-white
 	&:hover 
-		color: #FFF
+		color: $color-white
 		.dark-mode &
-			color: #000
+			color: $color-black
 .fas-3
-	background: #0081ff
+	background: $color-checkbox
 	.dark-mode &
-		background: #0081ff
+		background: $color-checkbox
 .fas-4 
 	line-height: 8px
 	transition: opacity .3s
@@ -812,7 +885,7 @@ h1, .h1
 .pills
 	display: inline-block
 	border-radius: 100px
-	color: #FFF
+	color: $color-white
 	padding: 2px 8px
 	font-weight: bold
 
@@ -828,7 +901,7 @@ h1, .h1
 			top: 50%
 			left: 50%
 			height: 40px
-			border-left: 1px dotted #dedede 
+			border-left: 1px dotted $color-border
 			transform: translateX(-50%)
 			z-index: -1
 	> [class*=col], tr
@@ -840,7 +913,7 @@ h1, .h1
 					
 .table-1
 	.dark-mode &
-		color: #FFF
+		color: $color-white
 	th, td
 		padding-left: 0
 		padding-right: 0
@@ -865,7 +938,7 @@ h1, .h1
 		height: 6px
 		border-radius: 100px
 		position: relative
-		background: #FFF
+		background: $color-white
 		overflow: visible
 		box-shadow: inset 0 1px 2px rgba(0, 0, 0, .35)
 		&:before 
@@ -877,7 +950,7 @@ h1, .h1
 			width: 4px
 			height: 4px
 			border-radius: 100px
-			background: #FFF
+			background: $color-white
 			box-shadow: 0 1px 1px rgba(0, 0, 0, .5)
 		.progress-bar
 			background: #fd8741		
@@ -891,7 +964,7 @@ h1, .h1
 			background: #fd5446
 		.bar 
 			position: absolute
-			color: #000
+			color: $color-black
 			font-size: 15px
 			text-align: center
 			line-height: 25px
@@ -902,7 +975,7 @@ h1, .h1
 			width: 25px
 			height: 25px
 			border-radius: 100px
-			background: #FFF
+			background: $color-white
 			box-shadow: 0 1px 2px rgba(0, 0, 0, .5)
 			margin-left: -12.5px
 		.bar-2
@@ -918,7 +991,7 @@ h1, .h1
 
 .table-2
 	.dark-mode &
-		color: #FFF
+		color: $color-white
 	th, td
 		vertical-align: middle
 		padding-top: 6px
@@ -927,9 +1000,9 @@ h1, .h1
 		&:not(:first-child)
 			text-align: center
 	a 
-		color: #222222
+		color: $color-body
 		.dark-mode &
-			color: #FFF
+			color: $color-white
 	tbody 
 		tr 
 			th:first-child
@@ -939,9 +1012,9 @@ h1, .h1
 					font-size: 18px
 					font-weight: bold
 			+ tr 
-				border-top: 1px solid #F1F1F1
+				border-top: 1px solid $color-block
 				.dark-mode &
-					border-top: 1px solid #313943
+					border-top: 1px solid $color-border-dark
 				
 .canvas-wrap
 	flex-grow: 1
@@ -954,6 +1027,8 @@ h1, .h1
 		bottom: 0
 		left: 0
 		right: 0
+		&:hover
+			cursor: pointer
 
 .canvas-wrap-2
 	height: 60px
@@ -984,11 +1059,11 @@ h1, .h1
 		flex-basis: 0
 		max-width: 100%
 		font-size: 12px 
-		color: #222222 
+		color: $color-body
 		@media (min-width: 1950px)
 			font-size: 14px
 		.dark-mode &
-			color: #FFF
+			color: $color-white
 	.lever
 		flex: 0 0 auto
 		position: relative
@@ -997,8 +1072,8 @@ h1, .h1
 		background-color: gray 
 		border-radius: 100px
 		margin-right: 5px
-		border-color: #ff3b30
-		background-color: #ff3b30
+		border-color: $color-badge
+		background-color: $color-badge
 		&:last-child
 			margin-right: 0
 			margin-left: 5px
@@ -1008,7 +1083,7 @@ h1, .h1
 			width: 12px
 			height: 12px
 			margin-top: -6px
-			background-color: #fff
+			background-color: $color-white
 			border-radius: 100px
 			left: 2px
 			top: 50%
@@ -1034,15 +1109,15 @@ h1, .h1
 		margin-right: 0 !important
 		height: 20px
 		width: 40px
-		border-color: #efefef
-		background-color: #efefef
+		border-color: $color-input
+		background-color: $color-input
 		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .5) 
 		.dark-mode &
 			border-color: #15191e
 			background-color: #15191e
 		&:after
 			content: "f"
-			color: #FFF
+			color: $color-white
 			position: absolute
 			text-align: center
 			line-height: 20px
@@ -1057,8 +1132,8 @@ h1, .h1
 			z-index: 5
 	input
 		&:checked ~ .lever
-			border-color: #efefef
-			background-color: #efefef
+			border-color: $color-input
+			background-color: $color-input
 			.dark-mode &
 				border-color: #15191e
 				background-color: #15191e
@@ -1098,8 +1173,8 @@ h1, .h1
 		border-radius: 14px
 		margin-left: 0
 		.dark-mode &
-			background: #1c222a
-			color: #FFF
+			background: $color-darkmode
+			color: $color-white
 		@media (max-width: 767.98px)
 			top: calc(100% + .5rem) !important
 			transform: none !important
@@ -1115,20 +1190,20 @@ h1, .h1
 				border-radius: 100px
 				border: 1px solid transparent
 				font-weight: bold
-				color: #000
+				color: $color-black
 				padding: 6px 12px
 				max-width: 120px
 				width: 120px
 				text-align: center
 				.dark-mode &
-					color: #FFF
+					color: $color-white
 				&.active 
 					background: #eeeef3
 					border: 1px solid #dee2e6
 					.dark-mode &
-						background: #313946
-						color: #FFF
-						border: 1px solid #313946
+						background: $bg-darkmode
+						color: $color-white
+						border: 1px solid $bg-darkmode
 		.dropdown-2-body
 			padding: 8px 16px 0
 			.tab-content
@@ -1159,20 +1234,20 @@ h1, .h1
 								background: #eeeef3
 								border-radius: 100px
 								.dark-mode &
-									background: #313946
+									background: $bg-darkmode
 						&:checked
 							~ span		
 								font-weight: bold
 					
 .popover-body
 	.dark-mode &
-		color: #FFF
-		background: #1c222a
+		color: $color-white
+		background: $color-darkmode
 .bs-popover-bottom
 	.arrow 
 		&:after 
 			.dark-mode &
-				border-bottom-color: #1c222a
+				border-bottom-color: $color-darkmode
 
 // Stories-show
 
@@ -1180,7 +1255,7 @@ h1, .h1
 	width: 20px
 	height: 20px
 	line-height: 20px
-	background: #b9b9b9
+	background: $color-gray
 	border-radius: 100px
 	display: inline-block
 	text-align: center
@@ -1191,12 +1266,29 @@ h1, .h1
 	width: 55px
 	height: 25px
 	line-height: 25px
-	color: #FFF
-	background: #02d79d
+	color: $color-white
+	background: $color-performance
 	border-radius: 100px
 	display: inline-block
 	text-align: center
 	margin-right: 4px
+
+.performance-big
+	font-size: 14px
+	color: $color-white
+	background: $color-performance
+	border-radius: 8px
+	display: inline-block
+	text-align: center
+	padding: 8px 
+	vertical-align: middle
+	line-height: 11px
+	span 
+		display: inline-block
+	.fas-2
+		display: inline-block
+		color: $color-performance
+		background: $color-white
 
 .long
 	white-space: nowrap
@@ -1213,23 +1305,23 @@ h1, .h1
 .form-inline-1
 	.custom-select
 		font-size: 13px
-		background-color: #f1f1f6
+		background-color: $bg-gray
 		border: 0
 		font-weight: bold
 		.dark-mode &
-			background-color: #1c222a
-			color: #FFF
+			background-color: $color-darkmode
+			color: $color-white
 		&:focus 
 			box-shadow: none
 
 .pagination
 	.page-link
-		background: #f1f1f6
-		color: #000
+		background: $bg-gray
+		color: $color-black
 		border: none
 		.dark-mode &
-			color: #FFF
-			background: #1c222a
+			color: $color-white
+			background: $color-darkmode
 		&:focus 
 			box-shadow: none
 
@@ -1266,23 +1358,23 @@ h1, .h1
 				top: 50%
 				height: 21px
 				width: 21px
-				background: #f1f1f6
-				color: #FFF
+				background: $bg-gray
+				color: $color-white
 				border-radius: 100px
 				left: 4px	
 				transform: translateY(-50%)
 				.dark-mode &
-					background: #313946
+					background: $bg-darkmode
 			&.active 
-				background: #f1f1f6
-				color: #000
+				background: $bg-gray
+				color: $color-black
 				font-weight: bold
 				.dark-mode &
-					background: #313946
-					color: #FFF
+					background: $bg-darkmode
+					color: $color-white
 				.pills-number
-					background: #FFF
-					color: #000
+					background: $color-white
+					color: $color-black
 			&:not(:last-child)
 				&:before 
 					content: ''
@@ -1311,13 +1403,13 @@ h1, .h1
 		&:focus
 			box-shadow: none
 		.dark-mode &
-			background: #313946
-			border-color: #313946
-			color: #FFF
+			background: $bg-darkmode
+			border-color: $bg-darkmode
+			color: $color-white
 
 .form-inline-2
 	.custom-select
-		background: #fff url(../img/arrow.png) no-repeat right .75rem center/8px 6px
+		background: $color-white url(../img/arrow.png) no-repeat right .75rem center/8px 6px
 		padding-top: 4px
 		padding-bottom: 4px
 		height: 34px
@@ -1325,9 +1417,9 @@ h1, .h1
 		&:focus 
 			box-shadow: none
 		.dark-mode &
-			background: #313946 url(../img/arrow.png) no-repeat right .75rem center/8px 6px
-			border-color: #313946
-			color: #FFF
+			background: $bg-darkmode url(../img/arrow.png) no-repeat right .75rem center/8px 6px
+			border-color: $bg-darkmode
+			color: $color-white
 
 .calendar-pitches
 	position: absolute 
@@ -1341,9 +1433,9 @@ h1, .h1
 	font-size: 14px
 	color: #a2a2a2
 	.dark-mode &
-		background: #313946
-		border-color: #313946
-		color: #FFF
+		background: $bg-darkmode
+		border-color: $bg-darkmode
+		color: $color-white
 
 .form-textarea
 	height: 180px !important
@@ -1353,12 +1445,12 @@ h1, .h1
 	&:focus 
 		box-shadow: none
 	.dark-mode &
-		background: #313946
-		border-color: #313946
-		color: #FFF
+		background: $bg-darkmode
+		border-color: $bg-darkmode
+		color: $color-white
 
 .qq-gallery.qq-uploader
-	background-color: #FFF
+	background-color: $color-white
 	min-height: 155px
 	.qq-upload-fail
 		z-index: 99
@@ -1366,9 +1458,9 @@ h1, .h1
 		font-size: 14px
 		opacity: 1
 	.dark-mode &
-		background: #313946
-		border-color: #313946
-		color: #FFF
+		background: $bg-darkmode
+		border-color: $bg-darkmode
+		color: $color-white
 
 .plus
 	height: 16px
@@ -1376,11 +1468,11 @@ h1, .h1
 	display: inline-block
 	border-radius: 100px
 	background: #2c8bf3
-	color: #FFF
+	color: $color-white
 	text-align: center
 	line-height: 16px
 	&:hover
-		color: #FFF
+		color: $color-white
 
 .btn-pitches
 	max-width: 160px
@@ -1434,23 +1526,23 @@ h1, .h1
 		height: 40px
 		border-radius: 100px
 		padding-left: 40px
-		background: #fff
+		background: $color-white
 		width: 100%	
 		transition: none
 		box-shadow: 0 1px 0 rgba(196, 196, 196, .35)
 		.dark-mode &
-			background: #313946
-			color: #FFF !important
+			background: $bg-darkmode
+			color: $color-white !important
 			&::-webkit-input-placeholder
-				color: #FFF
+				color: $color-white
 			&::-moz-placeholder
-				color: #FFF
+				color: $color-white
 			&:-ms-input-placeholder
-				color: #FFF
+				color: $color-white
 	.dropdown-menu 
 		margin-top: 0
 		.dark-mode &
-			background: #313946
+			background: $bg-darkmode
 	&.show
 		.form-control
 			border-radius: 15px 15px 0 0
@@ -1458,7 +1550,7 @@ h1, .h1
 			border: 1px solid rgba(196, 196, 196, .35)
 			border-bottom: 0
 			.dark-mode &
-				color: #FFF !important
+				color: $color-white !important
 
 .search-dropdown
 	border-radius: 0 0 25px 25px
@@ -1482,7 +1574,7 @@ h1, .h1
 					font-size: 16px
 				.title
 					font-size: 13px
-					color: #000
+					color: $color-black
 					line-height: 1.2
 					padding-bottom: 2px
 					text-overflow: ellipsis
@@ -1490,7 +1582,7 @@ h1, .h1
 					@media (min-width: 1950px)
 						font-size: 18px
 					.dark-mode & 
-						color: #FFF
+						color: $color-white
 				.date
 					font-size: 11px
 					@media (min-width: 1950px)
@@ -1501,7 +1593,7 @@ h1, .h1
 					.title
 						font-weight: bold
 					.dark-mode &
-						background: #1a1d21
+						background: $color-darkmode2
 
 .search-inside
 	max-height: 530px
@@ -1516,10 +1608,10 @@ h1, .h1
 		background-color: transparent
 		border-radius: 2px
 	&::-webkit-scrollbar-thumb
-		background-color: #F1F1F6
+		background-color: $color-scroll
 		border-radius: 2px
 		.dark-mode & 
-			background-color: #1a1d21
+			background-color: $color-darkmode2
 
 .w-18
 	width: 18px
@@ -1538,12 +1630,12 @@ h1, .h1
 		width: 300px
 
 .cart-promotion-white
-	background: #FFF
+	background: $color-white
 	border-radius: 8px
-	border: 1px solid #e0e0e0
+	border: 1px solid $color-promotion
 	margin-bottom: 20px
 	.dark-mode &
-		background: #1c222a
+		background: $color-darkmode
 		border: 0
 	.cart-box
 		padding: 24px 20px
@@ -1567,10 +1659,10 @@ h1, .h1
 
 .nav-tabs-promotion
 	padding: 15px 10px
-	border: 1px solid #e0e0e0
+	border: 1px solid $color-promotion
 	border-radius: 5px 5px 0 0
 	.dark-mode &
-		border-color: #313943
+		border-color: $color-border-dark
 	@media (max-width: 575.98px)
 		display: inline-block
 		margin-bottom: 24px
@@ -1579,33 +1671,33 @@ h1, .h1
 		font-weight: bold 
 		font-size: 14px
 		margin: 0 10px
-		color: #222222
-		border: 1px solid #e0e0e0
+		color: $color-body
+		border: 1px solid $color-promotion
 		border-radius: 5px
 		padding: 6px 16px
 		.dark-mode &
-			border-color: #313943
-			color: #FFF
+			border-color: $color-border-dark
+			color: $color-white
 		@media (min-width: 576px)
 			width: calc(33.33% - 20px)
 		&:hover
-			background: #f1f1f6
+			background: $bg-gray
 			opacity: 1
 			.dark-mode &
-				color: #222222
+				color: $color-body
 		&.active
-			background: #f1f1f6
+			background: $bg-gray
 			opacity: 1
-			color: #222222
-			border: 1px solid #e0e0e0
+			color: $color-body
+			border: 1px solid $color-promotion
 
 .promotion-box
 	padding-right: 15px
-	border: 1px solid #e0e0e0
+	border: 1px solid $color-promotion
 	border-radius: 0 0 5px 5px 
 	padding: 10px 10px 10px 40px
 	.dark-mode &
-		border-color: #313943
+		border-color: $color-border-dark
 	@media (max-width: 575.98px)
 		padding: 10px 10px 10px 16px
 
@@ -1617,12 +1709,12 @@ h1, .h1
 	.item 
 		padding: 4px 
 		.accordion-link
-			color: #222222
+			color: $color-body
 			font-weight: bold
 			font-size: 14px
 			transition: $transition
 			.dark-mode &
-				color: #FFF
+				color: $color-white
 			img	
 				width: 8px
 				transition: $transition
@@ -1637,9 +1729,9 @@ h1, .h1
 	.form-control
 		font-size: 13px
 		.dark-mode &
-			background: #313946
-			border-color: #313946
-			color: #FFF
+			background: $bg-darkmode
+			border-color: $bg-darkmode
+			color: $color-white
 		&:focus
 			box-shadow: none
 
@@ -1655,5 +1747,21 @@ h1, .h1
 		&:checked
 			~ .fa-check
 				transition: $transition
-				color: #FFF
-				background: #0081ff
+				color: $color-white
+				background: $color-checkbox
+
+// AUDIENCE
+
+.py-9
+	padding-top: 9px !important
+	padding-bottom: 9px !important
+
+.border-shadow
+	box-shadow: none
+	border: 1px solid $color-promotion
+
+.cart-map
+	background-image: url(../img/map.jpg)
+	background-size: cover
+	background-position: center center 
+
