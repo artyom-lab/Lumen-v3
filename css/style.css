@@ -775,6 +775,10 @@ h1, .h1 {
 .owl-carousel.owl-dots-big.owl-blue .owl-dots .owl-dot.active span, .owl-carousel.owl-dots-big.owl-blue .owl-dots .owl-dot:hover span {
   border: 2px solid #05a7ff; }
 
+@media (max-width: 575.98px) {
+  .owl-1 .fz-30 {
+    font-size: 26px; } }
+
 .owl-2.owl-theme .owl-dots {
   display: inline-block;
   position: absolute;
