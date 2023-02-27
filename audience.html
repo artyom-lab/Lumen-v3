@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="libs/OwlCarousel/OwlCarousel-22.3.4-owl.theme.css">
 		<link rel="stylesheet" href="libs/Waves/node-waves-0.7.6.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"/>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	
@@ -1107,131 +1108,130 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<div class="cart cart-content cart-map py-4">
-						<div class="row">
-							<div class="col-sm-6 col-md-8 col-xl-5 d-flex flex-column">
-								<div class="cart flex-grow-1 border-shadow mb-0">
-									<div class="cart-content pb-0">
-										<div class="row align-items-center">
-											<div class="col">
-												<div class="fz-13 text-uppercase font-weight-bold">Top Locations</div>
-											</div>
-											<div class="col-auto">
-												<a href="#!" class="fas fas-2 fa-chevron-right"></a>
-											</div>
+					<div class="cart cart-content cart-map">
+						<div class="heatmap" id="map-canvas">
+							<canvas class="heatmap-canvas"></canvas>
+						</div>
+							<div class="cart cart-locations">
+								<div class="cart-content pb-0">
+									<div class="row align-items-center">
+										<div class="col">
+											<div class="fz-13 text-uppercase font-weight-bold">Top Locations</div>
 										</div>
-										<div class="row align-items-center fz-13 pt-2">
-											<div class="col">
-												<div>Location</div>
-											</div>
-											<div class="col-auto">
-												<span class="pr-3">Pgvs</span>
-											</div>
+										<div class="col-auto">
+											<a href="#!" class="fas fas-2 fa-chevron-right"></a>
 										</div>
 									</div>
-									<div class="block scroll-wrap scroll-wrap-2">
-										<div class="scroll">
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Dallas, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">434</div>
+									<div class="row align-items-center fz-13 pt-2">
+										<div class="col">
+											<div>Location</div>
+										</div>
+										<div class="col-auto">
+											<span class="pr-3">Pgvs</span>
+										</div>
+									</div>
+								</div>
+								<div class="block scroll-wrap scroll-wrap-2">
+									<div class="scroll">
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Dallas, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">434</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Fort Worth, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">417</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Fort Worth, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">417</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Plano, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">389</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Plano, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">389</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Alrington, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">312</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Alrington, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">312</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Mesquite, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">153</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Mesquite, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">153</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Denton, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">88</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Denton, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">88</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Dallas, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">434</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Dallas, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">434</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Fort Worth, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">417</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Fort Worth, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">417</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Plano, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">389</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Plano, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">389</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Alrington, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">312</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Alrington, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">312</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Mesquite, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">153</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Mesquite, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">153</div>
 											</div>
-											<div class="block">
-												<div class="row align-items-center">
-													<div class="col">
-														<a href="#!">Denton, TX</a>
-													</div>
-													<div class="col-auto fz-15 font-weight-bold">88</div>
+										</div>
+										<div class="block">
+											<div class="row align-items-center">
+												<div class="col">
+													<a href="#!">Denton, TX</a>
 												</div>
+												<div class="col-auto fz-15 font-weight-bold">88</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>	
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -1688,7 +1688,7 @@
 			</div>
 		</section>
 	</div>
-		
+
 		<script src="libs/Jquery/jquery-3.3.1.js"></script>
 		<script src="libs/Popper/popper.js-1.14.7.js"></script>
 		<script src="libs/Bootstrap/bootstrap-4.3.1.js"></script>
@@ -1696,6 +1696,10 @@
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 		<script src="libs/Waves/node-waves-0.7.6.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+		<script src="js/heatmap.js"></script>
+		<script src="js/leaflet-heatmap.js"></script>
+		<script src="js/map.js"></script>
 		<script src="js/common.js"></script>
 	</body>
 </html>

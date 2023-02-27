@@ -1761,12 +1761,33 @@ h1, .h1
 	padding-top: 9px !important
 	padding-bottom: 9px !important
 
-.border-shadow
-	box-shadow: none
-	border: 1px solid $color-promotion
-
 .cart-map
-	background-image: url(../img/map.jpg)
-	background-size: cover
-	background-position: center center 
+	padding: 0
+	overflow: hidden
+	position: relative
+	.heatmap
+		min-height: 350px
+		@media (max-width: 575.98px)
+			min-height: 600px
+		.leaflet-control-attribution
+			display: none
+		.leaflet-left
+			right: 0
+			left: auto
+		.leaflet-control
+			margin-right: 10px
+	.cart-locations
+		position: absolute
+		top: 24px
+		overflow: hidden
+		left: 15px
+		box-shadow: none
+		border: 1px solid $color-promotion
+		height: calc(100% - 48px)
+		margin-bottom: 0
+		min-width: 195px
+		@media (max-width: 575.98px)
+			top: auto
+			bottom: 24px
+			height: 50%
 
