@@ -1288,10 +1288,14 @@ h1, .h1 {
 .form-inline-1 .custom-select {
   font-size: 13px;
   background-color: #f1f1f6;
-  border: 0;
-  font-weight: bold; }
+  border: 1px solid #e2e5e8;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #f1f1f6 url(../img/arrow.png) no-repeat right 0.75rem center/8px 6px; }
   .dark-mode .form-inline-1 .custom-select {
-    background-color: #1c222a;
+    background-color: #313943;
+    border: 1px solid #313943;
     color: #FFF; }
   .form-inline-1 .custom-select:focus {
     box-shadow: none; }
@@ -1768,5 +1772,59 @@ h1, .h1 {
         top: auto;
         bottom: 24px;
         height: 50%; } }
+
+.table-pitches tbody tr td:nth-child(3), .table-pitches tbody tr td:nth-child(4) {
+  font-size: 12px;
+  font-weight: normal; }
+.table-pitches tbody tr td.pgvs {
+  font-size: 18px;
+  font-weight: bold; }
+
+.scroll-table {
+  max-height: 450px; }
+
+.status {
+  color: #FFF;
+  padding: 2px 8px;
+  border-radius: 5px; }
+  .status.status-published {
+    background: #00c258; }
+  .status.status-resubmitted {
+    background: #acacac; }
+  .status.status-submitted {
+    background: #ffb721; }
+  .status.status-lead {
+    background: #a200ff; }
+  .status.status-draft {
+    background: #0057ff; }
+  .status.status-accepted {
+    background: #bee300; }
+  .status.status-write {
+    background: #1ee5ce; }
+  .status.status-rejected {
+    background: #ff004b; }
+
+.previous-left {
+  transform: rotate(-180deg); }
+
+.previous-left.disabled, .previous-right.disabled {
+  filter: grayscale(100%); }
+
+.span-disabled {
+  opacity: 0.6; }
+
+.input-number {
+  width: 44px;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 8px 4px;
+  font-size: 13px;
+  border-radius: 5px;
+  border-color: #e2e5e8;
+  background-color: #FFF !important;
+  text-align: center; }
+  .input-number:focus {
+    box-shadow: none;
+    border-color: #e2e5e8; }
 
 /*# sourceMappingURL=style.css.map */

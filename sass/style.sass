@@ -1311,10 +1311,14 @@ h1, .h1
 	.custom-select
 		font-size: 13px
 		background-color: $bg-gray
-		border: 0
+		border: 1px solid #e2e5e8
 		font-weight: bold
+		cursor: pointer
+		border-radius: 5px
+		background: $bg-gray url(../img/arrow.png) no-repeat right .75rem center/8px 6px
 		.dark-mode &
-			background-color: $color-darkmode
+			background-color: $color-border-dark
+			border: 1px solid $color-border-dark
 			color: $color-white
 		&:focus 
 			box-shadow: none
@@ -1791,3 +1795,63 @@ h1, .h1
 			bottom: 24px
 			height: 50%
 
+// PITCHES INDEX 
+
+.table-pitches
+	tbody 
+		tr 
+			td
+				&:nth-child(3), &:nth-child(4)
+					font-size: 12px
+					font-weight: normal
+				&.pgvs
+					font-size: 18px
+					font-weight: bold
+
+.scroll-table
+	max-height: 450px
+
+.status
+	color: #FFF
+	padding: 2px 8px
+	border-radius: 5px
+	&.status-published
+		background: #00c258
+	&.status-resubmitted
+		background: #acacac
+	&.status-submitted
+		background: #ffb721
+	&.status-lead
+		background: #a200ff
+	&.status-draft
+		background: #0057ff
+	&.status-accepted
+		background: #bee300
+	&.status-write
+		background: #1ee5ce
+	&.status-rejected
+		background: #ff004b
+
+.previous-left
+	transform: rotate(-180deg)
+
+.previous-left, .previous-right
+	&.disabled
+		filter: grayscale(100%)
+
+.span-disabled
+	opacity: .6
+
+.input-number
+	width: 44px
+	display: inline-block
+	vertical-align: middle
+	padding: 8px 4px
+	font-size: 13px
+	border-radius: 5px
+	border-color: #e2e5e8
+	background-color: $color-white !important
+	text-align: center
+	&:focus
+		box-shadow: none
+		border-color: #e2e5e8
