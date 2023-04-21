@@ -65,6 +65,43 @@ $(".close-metrics").on("click", function(){
   $(this).closest(".metric-alert").hide();
 });
 
+$(".btn-cross").on("click", function(){
+  $(".row-hidden").hide();
+});
+
+$(".news-select").on("click", function(){
+  $(this).closest(".dropdown").removeClass("show");
+  $(this).closest(".dropdown-menu").removeClass("show");
+  $(".hidden-store").removeClass("d-none");
+  $(".row-hidden").show();
+});
+
+$(".btn-cancel-close").on("click", function(){
+  $(this).closest(".hidden-store").addClass("d-none");
+});
+
+  $("#v-pills-store-tab").on("click", function(){
+    $(this).removeClass("done");
+    $("#v-pills-quote-tab, #v-pills-monthly-tab, #v-pills-review-tab").removeClass("done");
+  });
+
+  $("#v-pills-quote-tab").on("click", function(){
+    $(this).removeClass("done");
+    $("#v-pills-store-tab").addClass("done");
+    $("#v-pills-monthly-tab, #v-pills-review-tab").removeClass("done");
+  });
+
+  $("#v-pills-monthly-tab").on("click", function(){
+    $(this).removeClass("done");
+    $("#v-pills-store-tab, #v-pills-quote-tab").addClass("done");
+    $("#v-pills-review-tab").removeClass("done");
+  });
+
+  $("#v-pills-review-tab").on("click", function(){
+    $(this).removeClass("done");
+    $("#v-pills-store-tab, #v-pills-quote-tab, #v-pills-monthly-tab").addClass("done");
+  });
+
 $(document).ready(function () {
   var count_checked = $('.checkbox-block').find('input:checkbox:checked').length; 
   if (count_checked == 0)  {
@@ -87,6 +124,28 @@ $(document).ready(function () {
 });
 
 $('[data-toggle="popover"]').popover()
+
+ var placeholder;
+  $(document).on('change', '.uploader-input', function() {
+    var input = $(this),
+        profilePicValue = input.val(),
+        fileNameStart = profilePicValue.lastIndexOf('\\'); /* finds the end of the filepath */
+    profilePicValue = profilePicValue.substr(fileNameStart + 1).substring(0, 20); /* isolates the filename */
+    placeholder = input.siblings('.form-control').find('.image').attr('src');
+    if (profilePicValue != '') {
+      input.siblings('.form-control').children('.uploader-text').html(profilePicValue);
+      input.closest('.lumen-uploader').addClass('uploaded');
+    };
+    let file = this.files[0]; 
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      input.siblings('.form-control').find('.image').attr('src', e.target.result);
+    };
+    reader.readAsDataURL(file);
+  }).on('click', '.delete', function() {
+    $(this).closest('.lumen-uploader').removeClass('uploaded').find('input[type="file"]').val('').siblings('.form-control').children('.uploader-text').html('Upload your image');
+    $(this).closest('.lumen-uploader').find('.image').attr('src', placeholder);
+  });
 
 var start = moment("03/04/2023"),
     end   = moment("04/08/2023");
