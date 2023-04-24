@@ -1466,19 +1466,6 @@ h1, .h1
 		border-color: $bg-darkmode
 		color: $color-white
 
-.qq-gallery.qq-uploader
-	background-color: $color-white
-	min-height: 155px
-	.qq-upload-fail
-		z-index: 99
-	&:before 
-		font-size: 14px
-		opacity: 1
-	.dark-mode &
-		background: $bg-darkmode
-		border-color: $bg-darkmode
-		color: $color-white
-
 .plus
 	height: 16px
 	width: 16px
@@ -2075,68 +2062,45 @@ h1, .h1
 			border-color: $color-rgba
 			color: $color-white
 
-.lumen-upload-container
+.drop-zone 
+	height: 170px
+	width: 170px
 	border-radius: 12px
+	padding: 8px
 	border: 1px solid $color-border-2
-	display: inline-block
+	color: $color-black
+	display: flex
+	align-items: center
+	justify-content: center
+	text-align: center
+	cursor: pointer
+	font-size: 12px
 	.dark-mode &
 		border-color: $color-rgba
+		color: $color-white
 
-.lumen-uploader
-	display: block
-	position: relative
+.drop-zone__input 
+	display: none
+
+.drop-zone__thumb 
+	width: 100%
+	height: 100%
 	border-radius: 12px
 	overflow: hidden
-	margin: 0
-	cursor: pointer
-	&.uploaded
-		input
-			pointer-events: none
-	&.uploader-box
-		text-align: center
-		.form-control	
-			width: 170px
-			height: 170px
-			padding: 0
-			img 
-				width: 36px
-			.uploader-text-wrap
-				position: absolute
-				top: 50%
-				left: 0
-				right: 0
-				padding: 0 15px
-				transform: translateY(-50%)
-				transition: $transition
-				.uploader-text
-					display: block
-	.image 
-		width: 100% !important
-		height: 100%
-		object-fit: cover
-		position: relative
-		transition: $transition
-	input
+	background-color: $color-gray
+	background-size: cover
+	position: relative
+	&::after 
+		content: attr(data-label)
 		position: absolute
-		visibility: hidden
-	.form-control
-		position: relative
-		overflow: hidden
-		background: $color-white
-		border: 0
-		.dark-mode &
-			background: $bg-darkmode
-		.uploader-text
-			color: $color-black
-			font-size: 12px
-			.dark-mode &
-				color: $color-white
-		.uploader-description
-			font-size: 12px
-			line-height: 17px
-			max-width: 170px
-			display: block
-			margin: 0 auto
+		bottom: 0
+		left: 0
+		width: 100%
+		padding: 5px 0
+		color: $color-white
+		background: rgba(0, 0, 0, 0.75)
+		font-size: 14px
+		text-align: center
 
 .pillow-pink
 	display: inline-block

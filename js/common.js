@@ -134,28 +134,6 @@ $(document).ready(function () {
 
 $('[data-toggle="popover"]').popover()
 
- var placeholder;
-  $(document).on('change', '.uploader-input', function() {
-    var input = $(this),
-        profilePicValue = input.val(),
-        fileNameStart = profilePicValue.lastIndexOf('\\'); /* finds the end of the filepath */
-    profilePicValue = profilePicValue.substr(fileNameStart + 1).substring(0, 20); /* isolates the filename */
-    placeholder = input.siblings('.form-control').find('.image').attr('src');
-    if (profilePicValue != '') {
-      input.siblings('.form-control').children('.uploader-text').html(profilePicValue);
-      input.closest('.lumen-uploader').addClass('uploaded');
-    };
-    let file = this.files[0]; 
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      input.siblings('.form-control').find('.image').attr('src', e.target.result);
-    };
-    reader.readAsDataURL(file);
-  }).on('click', '.delete', function() {
-    $(this).closest('.lumen-uploader').removeClass('uploaded').find('input[type="file"]').val('').siblings('.form-control').children('.uploader-text').html('Upload your image');
-    $(this).closest('.lumen-uploader').find('.image').attr('src', placeholder);
-  });
-
 var start = moment("03/04/2023"),
     end   = moment("04/08/2023");
 
@@ -179,17 +157,69 @@ $('input[name="birthday1"]').daterangepicker({
 
 });
 
-  var s3Uploader = new qq.FineUploader({
-    element: document.getElementById('fine-uploader-s3'),
-    template: 'qq-template-s3'
-  });
-  var s32Uploader = new qq.FineUploader({
-    element: document.getElementById('fine-uploader-s3-2'),
-    template: 'qq-template-s3-2'
-  });
-  var s33Uploader = new qq.FineUploader({
-    element: document.getElementById('fine-uploader-s3-3'),
-    template: 'qq-template-s3-3'
+document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+  const dropZoneElement = inputElement.closest(".drop-zone");
+
+  dropZoneElement.addEventListener("click", (e) => {
+    inputElement.click();
   });
 
+  inputElement.addEventListener("change", (e) => {
+    if (inputElement.files.length) {
+      updateThumbnail(dropZoneElement, inputElement.files[0]);
+    }
+  });
+
+  dropZoneElement.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZoneElement.classList.add("drop-zone--over");
+  });
+
+  ["dragleave", "dragend"].forEach((type) => {
+    dropZoneElement.addEventListener(type, (e) => {
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
+  });
+
+  dropZoneElement.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    if (e.dataTransfer.files.length) {
+      inputElement.files = e.dataTransfer.files;
+      updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+    }
+
+    dropZoneElement.classList.remove("drop-zone--over");
+  });
+});
+
+function updateThumbnail(dropZoneElement, file) {
+  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+
+  // First time - remove the prompt
+  if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+    dropZoneElement.querySelector(".drop-zone__prompt").remove();
+  }
+
+  // First time - there is no thumbnail element, so lets create it
+  if (!thumbnailElement) {
+    thumbnailElement = document.createElement("div");
+    thumbnailElement.classList.add("drop-zone__thumb");
+    dropZoneElement.appendChild(thumbnailElement);
+  }
+
+  thumbnailElement.dataset.label = file.name;
+
+  // Show thumbnail for image files
+  if (file.type.startsWith("image/")) {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+    };
+  } else {
+    thumbnailElement.style.backgroundImage = null;
+  }
+}
 
