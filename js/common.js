@@ -76,8 +76,17 @@ $(".news-select").on("click", function(){
   $(".row-hidden").show();
 });
 
+$(".btn-add-info").on("click", function(){
+  $(".edit-box-selection").removeClass("d-none");
+});
+
+$(".btn-add-attribution").on("click", function(){
+  $(".edit-box-attribution").removeClass("d-none");
+});
+
 $(".btn-cancel-close").on("click", function(){
   $(this).closest(".hidden-store").addClass("d-none");
+  $(".edit-box-selection").addClass("d-none");
 });
 
   $("#v-pills-store-tab").on("click", function(){

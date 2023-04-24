@@ -9,15 +9,19 @@ $color-green: #3ad654
 $color-blue: #05a7ff
 $color-orange: #e88903
 $color-turquoise: #33bfb1
+$color-pink: #ffcdd6
 $color-gray: #b9b9b9
 $color-gray2: #6c7884
 $bg-gray: #f1f1f6
+$bg-gray-2: #f6f6fb
 $color-darkmode: #1c222a
 $color-darkmode2: #1a1d21
 $bg-darkmode: #313946
 $color-body: #222222
 $color-border: #dedede
+$color-border-2: #e2e5e8
 $color-border-dark: #313943
+$color-border-input: #ced4da
 $color-block: #F1F1F1
 $color-scroll: #F1F1F6
 $color-checkbox: #0081ff
@@ -25,6 +29,10 @@ $color-badge: #ff3b30
 $color-input: #efefef
 $color-performance: #02d79d
 $color-promotion: #e0e0e0
+$color-pill-gray: #c8c8c8
+$color-placeholder: #d5d5d5
+$color-cancel: #fa3455
+$color-rgba: rgba(196, 196, 196, .35)
 
 .red
 	color: $color-red
@@ -1311,7 +1319,7 @@ h1, .h1
 	.custom-select
 		font-size: 13px
 		background-color: $bg-gray
-		border: 1px solid #e2e5e8
+		border: 1px solid $color-border-2
 		font-weight: bold
 		cursor: pointer
 		border-radius: 5px
@@ -1356,7 +1364,7 @@ h1, .h1
 		.nav-link
 			font-size: 14px
 			text-align: center
-			color: #c8c8c8
+			color: $color-pill-gray
 			margin-bottom: 28px
 			position: relative
 			padding-top: 4px
@@ -1538,7 +1546,7 @@ h1, .h1
 		background: $color-white
 		width: 100%	
 		transition: none
-		box-shadow: 0 1px 0 rgba(196, 196, 196, .35)
+		box-shadow: 0 1px 0 $color-rgba
 		.dark-mode &
 			background: $bg-darkmode
 			color: $color-white !important
@@ -1556,7 +1564,7 @@ h1, .h1
 		.form-control
 			border-radius: 15px 15px 0 0
 			box-shadow: none
-			border: 1px solid rgba(196, 196, 196, .35)
+			border: 1px solid $color-rgba
 			border-bottom: 0
 			.dark-mode &
 				color: $color-white !important
@@ -1564,10 +1572,10 @@ h1, .h1
 .search-dropdown
 	border-radius: 0 0 25px 25px
 	box-shadow: none
-	border: 1px solid rgba(196, 196, 196, .35)
+	border: 1px solid $color-rgba
 	border-top: 0
 	.loc-border
-		border-top: 1px solid rgba(196, 196, 196, .35)
+		border-top: 1px solid $color-rgba
 		padding: 14px 0
 		.news-box
 			padding: 0 10px
@@ -1751,7 +1759,7 @@ h1, .h1
 			font-size: 9px
 			color: transparent
 			cursor: pointer
-			border: 1px solid #ced4da
+			border: 1px solid $color-border-input
 			border-radius: 3px
 		&:checked
 			~ .fa-check
@@ -1849,7 +1857,7 @@ h1, .h1
 	padding: 8px 4px
 	font-size: 13px
 	border-radius: 5px
-	border-color: #e2e5e8
+	border-color: $color-border-2
 	background-color: $color-white !important
 	text-align: center
 	.dark-mode &
@@ -1858,12 +1866,12 @@ h1, .h1
 		color: $color-white
 	&:focus
 		box-shadow: none
-		border-color: #e2e5e8
+		border-color: $color-border-2
 
 .nav-newoptin 
 	.nav-link
 		font-size: 13px
-		color: #c8c8c8
+		color: $color-pill-gray
 		margin-bottom: 4px
 		position: relative
 		padding: 17px
@@ -1899,10 +1907,10 @@ h1, .h1
 			.pills-number
 				background: $color-checkbox
 		&.active
-			background: #f6f6fb
-			border: 1px solid #e2e5e8
+			background: $bg-gray-2
+			border: 1px solid $color-border-2
 			.dark-mode &
-				border: 1px solid rgba(196, 196, 196, .35)
+				border: 1px solid $color-rgba
 		&.done
 			color: $color-black
 			.dark-mode &
@@ -1928,18 +1936,18 @@ h1, .h1
 		padding: 4px 15px
 		height: 44px
 		border-radius: 8px
-		background: #f6f6fb
+		background: $bg-gray-2
 		width: 100%	
 		transition: none
-		border: 1px solid rgba(196, 196, 196, .35)
+		border: 1px solid $color-rgba
 		&::-webkit-input-placeholder
-			color: #d5d5d5
+			color: $color-placeholder
 		&::-moz-placeholder
-			color: #d5d5d5
+			color: $color-placeholder
 		&:-ms-input-placeholder
-			color: #d5d5d5
+			color: $color-placeholder
 		&:focus
-			border: 1px solid rgba(196, 196, 196, .35)
+			border: 1px solid $color-rgba
 			box-shadow: none
 		.dark-mode &
 			background: $bg-darkmode
@@ -1960,7 +1968,7 @@ h1, .h1
 			border-radius: 8px 8px 0 0
 			box-shadow: none
 			background: $color-white
-			border: 1px solid rgba(196, 196, 196, .35)
+			border: 1px solid $color-rgba
 			border-bottom: 0
 			.dark-mode &
 				color: $color-white !important
@@ -1970,10 +1978,10 @@ h1, .h1
 	border-radius: 0 0 8px 8px
 	box-shadow: none
 	padding: 0
-	border: 1px solid rgba(196, 196, 196, .35)
+	border: 1px solid $color-rgba
 	border-top: 0
 	.loc-border
-		border-top: 1px solid rgba(196, 196, 196, .35)
+		border-top: 1px solid $color-rgba
 		.news-box
 			padding-right: 10px
 			max-height: 262px
@@ -1983,7 +1991,7 @@ h1, .h1
 				font-size: 13px
 				color: $color-black
 				&:not(:last-child)
-					border-bottom: 1px solid rgba(196, 196, 196, .35)
+					border-bottom: 1px solid $color-rgba
 				.dark-mode & 
 					color: $color-white
 				@media (max-width: 991.98px)
@@ -1992,7 +2000,7 @@ h1, .h1
 					font-size: 16px
 				&:hover
 					opacity: 1
-					background: #f6f6fb
+					background: $bg-gray-2
 					font-weight: bold
 					.dark-mode &
 						background: $color-darkmode2
@@ -2012,7 +2020,7 @@ h1, .h1
 
 .btn-cancel
 	font-size: 13px
-	background: #fa3455
+	background: $color-cancel
 	padding: 10px 16px
 	border-radius: 8px
 
@@ -2050,29 +2058,29 @@ h1, .h1
 		margin-bottom: 12px
 		width: 100% !important
 		font-size: 13px
-		background: #f6f6fb
+		background: $bg-gray-2
 		border-radius: 5px
-		border-color: #e2e5e8
+		border-color: $color-border-2
 		&::-webkit-input-placeholder
-			color: #d5d5d5
+			color: $color-placeholder
 		&::-moz-placeholder
-			color: #d5d5d5
+			color: $color-placeholder
 		&:-ms-input-placeholder
-			color: #d5d5d5
+			color: $color-placeholder
 		&:focus
 			box-shadow: none
-			border-color: #e2e5e8
+			border-color: $color-border-2
 		.dark-mode &
 			background: $bg-darkmode
-			border-color: rgba(196, 196, 196, .35)
+			border-color: $color-rgba
 			color: $color-white
 
 .lumen-upload-container
 	border-radius: 12px
-	border: 1px solid #e2e5e8
+	border: 1px solid $color-border-2
 	display: inline-block
 	.dark-mode &
-		border-color: rgba(196, 196, 196, .35)
+		border-color: $color-rgba
 
 .lumen-uploader
 	display: block
@@ -2135,7 +2143,7 @@ h1, .h1
 	padding: 2px 12px
 	font-weight: bold
 	border-radius: 5px
-	background: #ffcdd6
+	background: $color-pink
 	.dark-mode &
 		color: $color-black
 
@@ -2154,7 +2162,7 @@ h1, .h1
 			font-size: 9px
 			color: transparent
 			cursor: pointer
-			border: 1px solid #ced4da
+			border: 1px solid $color-border-input
 			border-radius: 3px
 		&:checked
 			~ .fa-check
